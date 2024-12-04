@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  spark:
+    build: .
+    container_name: spark_wordcount
+    environment:
+      - SPARK_MASTER_URL=spark://localhost:7077
+    command: ["spark-submit", "/opt/spark-apps/wordcount.py"]
